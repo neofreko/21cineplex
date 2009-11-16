@@ -7,6 +7,7 @@
     <select itemPath="" produces="XML">
       <urls>
         <!--url>http://21cineplex.com/searchtheater.cfm?search=st_city&q={city}</url-->
+	<url></url>
       </urls>
       <inputs>        
         <key id='city' type='xs:string' paramType='variable' required="false" default="3" />
