@@ -15,10 +15,10 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
-	 result = y.rest('http://21cineplex.com/searchtheater.cfm?search=st_city&q=' + city).get().reponse;
+	 var result = y.rest('http://21cineplex.com/searchtheater.cfm?search=st_city&q=' + city).get().reponse;
 	 y.log(result);
-	 items = <items>;
-	 for each(row in result)
+	 var items = <items>;
+	 for each(var row in result)
 	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
 	 items +=</items>
          response.object = items;
