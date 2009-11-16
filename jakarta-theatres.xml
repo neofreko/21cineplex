@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+    <sampleQuery>select * from {table} where city=3;</sampleQuery>
+  </meta>
+  <bindings>
+    <select itemPath="" produces="XML">
+      <urls>
+        <url>http://21cineplex.com/searchtheater.cfm?search=st_city&q={city}</url>
+      </urls>
+      <inputs>        
+        <key id='city' type='xs:string' paramType='variable' required="false" default="3" />
+      </inputs>
+      <execute><![CDATA[          
+         // Your javascript goes here. 
+         // We will run it on our servers
+	 result = request.get().response;
+	 log(result);
+	 items = <items>;
+	 foreach(row in result)
+	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
+	 items +=</items>
+         response.object = items;
+      ]]></execute>    
+    </select>  
+  </bindings>
+</table>
