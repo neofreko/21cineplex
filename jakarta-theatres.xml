@@ -17,7 +17,7 @@
 	 result = request.get().response;
 	 log(result);
 	 items = <items>;
-	 foreach(row in result)
+	 for each(row in result)
 	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
 	 items +=</items>
          response.object = items;
