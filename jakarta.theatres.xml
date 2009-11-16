@@ -15,7 +15,7 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
-	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').query('search', 'st_city').query('q', city).get().response;
+	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').accept('application/json').query('search', 'st_city').query('q', city).get().response;
 	 y.log(result);
 	 var items = <items>;
 	 for each(var row in result)
