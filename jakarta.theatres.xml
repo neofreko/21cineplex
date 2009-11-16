@@ -18,10 +18,13 @@
 	 y.include('http://json.org/json2.js');
 	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').query('search', 'st_city').query('q', city).accept('application/json').get().response;
 	 y.log(result);
-	 y.log(result[0]);
+	 y.log(result;length);
 	 y.log(JSON);
 	 var myitems = <items/>;
-	 
+	 for (var i=0;i<result.length;i++) {
+	    var row = result[i];
+	    items=+<item>{row.oV}</item>
+	 }
          response.object = myitems;
 	 /*response.object = <item>
                              <url>{request.url}</url>
