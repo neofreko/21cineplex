@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
   <meta>
-    <sampleQuery>select * from {table} where a='cat' and b='dog';</sampleQuery>
+    <sampleQuery>select * from {table} where city=3;</sampleQuery>
   </meta>
   <bindings>
     <select itemPath="" produces="XML">
       <urls>
-        <url>http://fake.url/{a}</url>
+        <!--url>http://21cineplex.com/searchtheater.cfm?search=st_city&q={city}</url-->
+	<url></url>
       </urls>
-      <inputs>
-        <key id='a' type='xs:string' paramType='path' required="true" />
-        <key id='b' type='xs:string' paramType='variable' required="true" />
+      <inputs>        
+        <key id='city' type='xs:string' paramType='variable' required="false" default="3" />
       </inputs>
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
-         response.object = <item>
+	 /*result = y.query('http://21cineplex.com/searchtheater.cfm?search=st_city&q=' + city).get().reponse;
+	 log(result);
+	 items = <items>;
+	 for each(row in result)
+	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
+	 items +=</items>
+         response.object = items;*/
+	 response.object = <item>
                              <url>{request.url}</url>
-                             <a>{a}</a>
-                             <b>{b}</b>
+                             <a>{city}</a>
                            </item>;
       ]]></execute>    
     </select>  
