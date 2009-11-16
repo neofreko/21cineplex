@@ -18,12 +18,15 @@
 	 y.include('http://json.org/json2.js');
 	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').query('search', 'st_city').query('q', city).accept('application/json').get().response;
 	 y.log(result);
+	 y.log(result[0]);
 	 y.log(JSON);
-	 result = JSON.parse(result); // oh this is so dangerous
-	 y.log(result);
+	 //result = JSON.parse(result); // oh this is so dangerous
+	 //y.log(result);
 	 var items = <items>;
-	 for each(var row in result)
+	 for(var i=0;i<result.length) {
+	    var row = result[i];
 	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
+	  }
 	 items +=</items>
          response.object = items;
 	 /*response.object = <item>
