@@ -21,10 +21,10 @@
 	 y.log(result[0]);
 	 y.log(JSON);
 	 var items = <items>;
-	 for(var i=0;i<result.length;i++) {
+	 /*for(var i=0;i<result.length;i++) {
 	    var row = result[i];
 	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
-	  }
+	  }*/
 	 items +=</items>
          response.object = items;
 	 /*response.object = <item>
