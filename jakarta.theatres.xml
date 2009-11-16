@@ -23,7 +23,7 @@
 	 //result = JSON.parse(result); // oh this is so dangerous
 	 //y.log(result);
 	 var items = <items>;
-	 for(var i=0;i<result.length) {
+	 for(var i=0;i<result.length;i++) {
 	    var row = result[i];
 	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
 	  }
