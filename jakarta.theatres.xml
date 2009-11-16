@@ -20,8 +20,8 @@
 	 y.log(result);
 	 y.log(result[0]);
 	 y.log(JSON);
-	 var myitems = <items>;
-	 myitems += </items>
+	 var myitems = <items/>;
+	 
          response.object = myitems;
 	 /*response.object = <item>
                              <url>{request.url}</url>
