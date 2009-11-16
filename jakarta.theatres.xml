@@ -20,10 +20,9 @@
 	 y.log(result);
 	 y.log(result[0]);
 	 y.log(JSON);
-	 var items = <items>;
-	 
-	 items +=</items>
-         response.object = items;
+	 var myitems = <items>;
+	 myitems += </items>
+         response.object = myitems;
 	 /*response.object = <item>
                              <url>{request.url}</url>
                              <a>{city}</a>
