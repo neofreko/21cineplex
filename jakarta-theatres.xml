@@ -14,13 +14,17 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
-	 result = y.query('http://21cineplex.com/searchtheater.cfm?search=st_city&q=' + city).get().reponse;
+	 /*result = y.query('http://21cineplex.com/searchtheater.cfm?search=st_city&q=' + city).get().reponse;
 	 log(result);
 	 items = <items>;
 	 for each(row in result)
 	    items += <item><code>{row.oV}</code><name>{row.oT}</name></item>;
 	 items +=</items>
-         response.object = items;
+         response.object = items;*/
+	 response.object = <item>
+                             <url>{request.url}</url>
+                             <a>{city}</a>
+                           </item>;
       ]]></execute>    
     </select>  
   </bindings>
