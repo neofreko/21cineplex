@@ -15,7 +15,10 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
+	 y.include('http://json.org/json2.js');
 	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').query('search', 'st_city').query('q', city).accept('application/json').get().response;
+	 y.log(result);
+	 result = JSON.parse(result); // oh this is so dangerous
 	 y.log(result);
 	 var items = <items>;
 	 for each(var row in result)
