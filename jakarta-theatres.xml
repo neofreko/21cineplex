@@ -6,7 +6,7 @@
   <bindings>
     <select itemPath="" produces="XML">
       <urls>
-        <url>http://21cineplex.com/searchtheater.cfm?search=st_city&q={city}</url>
+        <!--url>http://21cineplex.com/searchtheater.cfm?search=st_city&q={city}</url-->
       </urls>
       <inputs>        
         <key id='city' type='xs:string' paramType='variable' required="false" default="3" />
@@ -14,7 +14,7 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
-	 result = request.get().response;
+	 result = y.query('http://21cineplex.com/searchtheater.cfm?search=st_city&q=' + city).get().reponse;
 	 log(result);
 	 items = <items>;
 	 for each(row in result)
