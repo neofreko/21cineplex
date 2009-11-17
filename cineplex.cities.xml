@@ -16,7 +16,7 @@
          // Your javascript goes here. 
          // We will run it on our servers
 
-	 var q = y.query('select * from html where url="http://21cineplex.com/" and xpath="//select[@id='sc_city']/option"');
+	 var q = y.query('select * from html where url="http://21cineplex.com/" and xpath="//select[@id=\'sc_city\']/option"');
          response.object = q.results;
       ]]></execute>    
     </select>  
