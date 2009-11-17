@@ -29,7 +29,10 @@
 	 for (var i=0;i<result.length;i++) {
 	    var row = result[i];
 	    y.log(row);
-	    myitems+=<item><code>{row.oV}</code><name>{row.oT}</name></item>;
+	    myitems+= <item>
+			<code>{row.oV}</code>
+			<name>{row.oT}</name>
+		      </item>;
 	 }
          response.object = myitems;
 	 /*response.object = <item>
