@@ -29,13 +29,7 @@
 	 for (var i=0;i<result.length;i++) {
 	    var row = result[i];
 	    y.log(row);
-	    if (!myitems.item)
 		myitems += <item>
-			<code>{row.oV}</code>
-			<name>{row.oT}</name>
-		      </item>;
-	    else
-		myitems.item += <item>
 			<code>{row.oV}</code>
 			<name>{row.oT}</name>
 		      </item>;
