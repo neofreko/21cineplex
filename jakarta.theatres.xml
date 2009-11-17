@@ -23,7 +23,7 @@
 	 var myitems = <items/>;
 	 for (var i=0;i<result.length;i++) {
 	    var row = result[i];
-	    myitems=+<item>{row.oV}</item>
+	    myitems+=<item>{row.oV}</item>
 	 }
          response.object = myitems;
 	 /*response.object = <item>
