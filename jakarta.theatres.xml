@@ -16,7 +16,7 @@
          // Your javascript goes here. 
          // We will run it on our servers
 	 y.include('http://json.org/json2.js');
-	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').query('search', 'st_city').query('q', city).accept('application/text').get().response;
+	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').query('search', 'st_city').query('q', city).accept('text/plain').get().response;
 	 y.log(result);
 	 y.log(result.length);
 	 y.log(JSON.parse(result));
