@@ -19,7 +19,9 @@
 	 var result = y.rest('http://21cineplex.com/searchtheater.cfm').query('search', 'st_city').query('q', city).accept('text/plain').get().response;
 	 y.log(result);
 	 y.log(result.length);
-	 y.log(JSON);
+	 y.log(JSON.stringify({'foo':'bar', 'baz':5}));
+	 result = JSON.parse(result);
+	 y.log(result);
 	 var myitems = <items/>;
 	 for (var i=0;i<result.length;i++) {
 	    var row = result[i];
