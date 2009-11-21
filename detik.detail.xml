@@ -21,7 +21,7 @@
 	 var judul = y.xpath(q.results, '//span[@class="judul"]');
 	 y.log(judul);
 	 var berita = {
-	  judul: y.xpath(q.results, '//span[@class="judul"]')
+	    'judul': judul
 	 };
          response.object = berita;
       ]]></execute>    
