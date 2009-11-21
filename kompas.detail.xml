@@ -4,7 +4,7 @@
     <sampleQuery>select * from {table} where url=x;</sampleQuery>
   </meta>
   <bindings>
-    <select itemPath="" produces="XML">
+    <select itemPath="" produces="json">
       <urls>
         <!--url>http://21cineplex.com/searchtheater.cfm?search=st_city&q={city}</url-->
 	<url></url>
