@@ -21,7 +21,7 @@
 	 //y.log(y.xpath(q.results, '//span[@class="judul"]'));
 	 var judul = y.xpath(q.results, '//span[@class="judul"]');
 	 //var judul = q.results.span.(@['class']=="judul");
-	 var lokasi = y.xpath(q.results, '/strong[1]/text()'); //location
+	 var lokasi = y.xpath(q.results, '/strong/text()'); //location
 	 y.log(judul);
 	 y.log(lokasi);
 	 var berita = {
