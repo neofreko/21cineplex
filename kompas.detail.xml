@@ -15,6 +15,7 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
+	 y.include('http://json.org/json2.js');
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'kolomkiridalamartikel\']"');
 	 
@@ -30,8 +31,8 @@
 	 // woeid
 	 //wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "jakarta" AND documentType="text/plain" AND appid="@appid"', {lokasi: lokasi, appid: 'ouWbNM36', url: url});
 	 
-	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("application/json").get().response;
-	 woeid = g;
+	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/plain").get().response;
+	 woeid = JSON.parse(g);
 	 y.log(woeid);
 	 var berita = {
 	    'judul': judul,
