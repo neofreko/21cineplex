@@ -18,7 +18,7 @@
 
 	 var q = y.query('select * from html where url="@url" and xpath="//div[@id=\'isiberita\']"', url=url);
 	 var berita = {
-	  judul: y.xpath(q.results, '//span[@class="judul"]');
+	  judul: y.xpath(q.results, '//span[@class="judul"]')
 	 };
          response.object = berita;
       ]]></execute>    
