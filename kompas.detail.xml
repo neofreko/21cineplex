@@ -26,9 +26,14 @@
 	 lokasi = lokasi.replace(', KOMPAS.com -', '');
 	 y.log(judul);
 	 y.log(lokasi);
+	 
+	 // woeid
+	 wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "Banda Aceh, Jakarta" AND documentType="text/plain"');
+	 woeid = wq.results.matches.match.place;
 	 var berita = {
 	    'judul': judul,
-	    'lokasi': lokasi
+	    'lokasi': lokasi,
+	    'woeid': woeid
 	 };
          response.object = berita;
       ]]></execute>    
