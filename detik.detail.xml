@@ -17,6 +17,7 @@
          // We will run it on our servers
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'isiberita\']"');
+	 y.log(y.xpath(q.results, '//span[@class="judul"]'));
 	 var berita = {
 	  judul: y.xpath(q.results, '//span[@class="judul"]')
 	 };
