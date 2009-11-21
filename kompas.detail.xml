@@ -38,7 +38,8 @@
 	 //g = y.rest("http://maps.google.com/maps/geo").accept("application/xml").query("output","xml").query('q', lokasi).get().response;
 	 //y.log(g);
 	 //woeid = y.xpath('//Placemark/Point');
-	 y.log(woeid);
+	 //y.log(woeid);
+	 woeid=g;
 	 var berita = {
 	    'judul': judul,
 	    'lokasi': lokasi,
