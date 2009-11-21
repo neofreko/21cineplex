@@ -18,7 +18,7 @@
          // Your javascript goes here. 
          // We will run it on our servers
 		 q = y.rest('http://api.opencalais.com/enlighten/rest/?licenseID={licenseID}&content={content}&paramXML={paramXML}').accept('application/xml').query('licenseID', licenseID).query('content', content).query('paramXML', paramXML).get().response;
-		 
+		 y.log(q);
 	     response.object = q.results;
       ]]></execute>    
     </select>  
