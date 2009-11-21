@@ -69,8 +69,8 @@ try
     //jsonObject = JSON.parse(q);
 	jsonObject = y.xmlToJson(q);  
 	//y.log(jsonObject);
-        resolveReferences(jsonObject);
-    simpleJSON = createHierarchy(jsonObject);
+        resolveReferences(jsonObject.json);
+    simpleJSON = createHierarchy(jsonObject.json);
     // start using simpleJSON
 }
 catch    (e)
