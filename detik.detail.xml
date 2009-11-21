@@ -36,7 +36,10 @@
 	 //woeid
 	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/plain").get().response;
 	 woeid = JSON.parse(g);
-	 woeid = woeid.Placemark[0].Point;
+	 if (woeid.Placemark)
+	  woeid = woeid.Placemark[0].Point;	  
+	 else 
+	  woeid = {};
 	 
 	 // calais
 	 var calais = y.query('use "http://github.com/neofreko/21cineplex/raw/master/opencalais.xml" as opencalais; select * from opencalais where licenseID = "xerhnpv8p8ru95h9wucgk4n6" and content = "@content"', {'content': String(q.results)});
