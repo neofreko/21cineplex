@@ -28,7 +28,7 @@
 	 y.log(lokasi);
 	 
 	 // woeid
-	 wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "Banda Aceh, Jakarta" AND documentType="text/plain"');
+	 wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "@lokasi" AND documentType="text/plain"', {lokasi: lokasi});
 	 woeid = wq.results.matches.match.place;
 	 var berita = {
 	    'judul': judul,
