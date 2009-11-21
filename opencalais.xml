@@ -65,7 +65,8 @@ function createHierarchy(flatdb) {
 var simpleJSON = null;
 try
 {
-    jsonObject = JSON.parse(JSONResponse);  
+    //jsonObject = JSON.parse(JSONResponse);
+	jsonObject = y.xmlToJson(JSONResponse);  
 	y.log(jsonObject);
         resolveReferences(jsonObject);
     simpleJSON = createHierarchy(jsonObject);
