@@ -31,12 +31,13 @@
 	 // woeid
 	 //wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "jakarta" AND documentType="text/plain" AND appid="@appid"', {lokasi: lokasi, appid: 'ouWbNM36', url: url});
 	 
-	 //g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/plain").get().response;
-	 //woeid = JSON.parse(g);
-	 
-	 g = y.rest("http://maps.google.com/maps/geo").query("output","xml").query('q', lokasi).accept("application/xml").get().response;
+	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/json").get().response;
+	 woeid = JSON.parse(g);
 	 y.log(g);
-	 woeid = y.xpath('//Placemark/Point');
+	 
+	 //g = y.rest("http://maps.google.com/maps/geo").accept("application/xml").query("output","xml").query('q', lokasi).get().response;
+	 //y.log(g);
+	 //woeid = y.xpath('//Placemark/Point');
 	 y.log(woeid);
 	 var berita = {
 	    'judul': judul,
