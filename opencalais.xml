@@ -17,6 +17,16 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
+		 if (!paramXML)
+		  paramXML=<c:params xmlns:c=http://s.opencalais.com/1/pred/ 
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <c:processingDirectives 
+        c:contentType="text/txt" 
+        c:outputFormat="application/json">
+    </c:processingDirectives>
+    <c:userDirectives />
+    <c:externalMetadata />
+        </c:params>;
 		 q = y.rest('http://api.opencalais.com/enlighten/rest/?licenseID={licenseID}&content={content}&paramXML={paramXML}').accept('application/xml').query('licenseID', licenseID).query('content', content).query('paramXML', paramXML).get().response;
 		 y.log(q);
 	     response.object = q;
