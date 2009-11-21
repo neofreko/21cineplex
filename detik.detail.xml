@@ -23,7 +23,7 @@
 	 y.include('http://json.org/json2.js');	 
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'isiberita\']"');
-	 //y.log(q.results);
+	 y.log(q.results);
 	 //y.log(y.xpath(q.results, '//span[@class="judul"]'));
 	 var judul = String(y.xpath(q.results, '//span[@class="judul"]'));
 	 //var judul = q.results.span.(@['class']=="judul");
