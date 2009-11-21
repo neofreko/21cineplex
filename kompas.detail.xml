@@ -18,9 +18,9 @@
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'kolomkiridalamartikel\']"');
 	 
-	 var judul = String(y.xpath(q.results, '//div[@class="judulisiberita"]'));
+	 var judul = String(y.xpath(q.results, '//div[@class="judulisiberita"]/text()'));
 	 //var judul = q.results.span.(@['class']=="judul");
-	 var lokasi = String(y.xpath(q.results, '//div[@id=\'article_body\']/strong')[1]); //location
+	 var lokasi = String(y.xpath(q.results, '//div[@id=\'article_body\']/p/strong')[1]); //location
 	 y.log(judul);
 	 y.log(lokasi);
 	 var berita = {
