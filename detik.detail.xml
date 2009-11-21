@@ -15,6 +15,7 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
+	 y.include('http://json.org/json2.js');
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'isiberita\']"');
 	 //y.log(q.results);
@@ -25,9 +26,16 @@
 	 //lokasi = new RegExp(/<div class="tower">.*?<\/div><strong>(.*?)<\/strong>/m).exec(q.results);
 	 y.log(judul);
 	 y.log(lokasi);
+	 
+	 //woeid
+	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/plain").get().response;
+	 woeid = JSON.parse(g);
+	 woeid = woeid.Placemark[0].Point;
+	 
 	 var berita = {
 	    'judul': judul,
-	    'lokasi': lokasi
+	    'lokasi': lokasi,
+	    'woeid': woeid
 	 };
          response.object = berita;
       ]]></execute>    
