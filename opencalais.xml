@@ -48,7 +48,7 @@ function createHierarchy(flatdb) {
       return hdb;
 }
 
-		 if (!paramXML)
+		 //if (!paramXML)
 		  paramXML=<c:params xmlns:c="http://s.opencalais.com/1/pred/" 
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <c:processingDirectives 
