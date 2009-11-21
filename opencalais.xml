@@ -12,7 +12,7 @@
       <inputs>        
         <key id='licenseID' type='xs:string' paramType='variable' required="true" />
 		<key id='content' type='xs:string' paramType='variable' required="true" />
-		<key id='paramXML' type='xs:string' paramType='variable' required="false" />
+		<key id='paramsXML' type='xs:string' paramType='variable' required="false" />
       </inputs>
       <execute><![CDATA[          
          // Your javascript goes here. 
@@ -48,8 +48,8 @@ function createHierarchy(flatdb) {
       return hdb;
 }
 
-		 //if (!paramXML)
-		  paramXML=<c:params xmlns:c="http://s.opencalais.com/1/pred/" 
+		 //if (!paramsXML)
+		  paramsXML=<c:params xmlns:c="http://s.opencalais.com/1/pred/" 
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <c:processingDirectives 
         c:contentType="text/txt" 
@@ -58,14 +58,15 @@ function createHierarchy(flatdb) {
     <c:userDirectives />
     <c:externalMetadata />
         </c:params>;
-		 q = y.rest('http://api.opencalais.com/enlighten/rest/?licenseID={licenseID}&content={content}&paramXML={paramXML}').accept('application/xml').query('licenseID', licenseID).query('content', content).query('paramXML', paramXML).get().response;
+		 q = y.rest('http://api.opencalais.com/enlighten/rest/?licenseID={licenseID}&content={content}&paramXML={paramXML}').accept('application/xml').query('licenseID', licenseID).query('content', content).query('paramsXML', paramsXML).get().response;
 		 y.log(q);
 		 
 		 var jsonObject = null;
 var simpleJSON = null;
 try
 {
-    jsonObject = JSON.parse(JSONResponse);        
+    jsonObject = JSON.parse(JSONResponse);  
+	y.log(jsonObject);
         resolveReferences(jsonObject);
     simpleJSON = createHierarchy(jsonObject);
     // start using simpleJSON
