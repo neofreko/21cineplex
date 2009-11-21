@@ -19,7 +19,7 @@
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'isiberita\']"');
 	 //y.log(y.xpath(q.results, '//span[@class="judul"]'));
 	 var judul = y.xpath(q.results, '//span[@class="judul"]');
-	 y.log(judul);
+	 y.log(judul.textContent);
 	 var berita = {
 	    'judul': judul
 	 };
