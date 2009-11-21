@@ -22,7 +22,7 @@
 	 var judul = y.xpath(q.results, '//span[@class="judul"]');
 	 //var judul = q.results.span.(@['class']=="judul");
 	 var lokasi = y.xpath(q.results, '//strong/text()'); //location
-	 lokasi = new RegExp(/<div class="tower">.*?</div><strong>(.*?)<\/strong>/).exec(q.results);
+	 lokasi = new RegExp(/<div class="tower">.*?<\/div><strong>(.*?)<\/strong>/).exec(q.results);
 	 y.log(judul);
 	 y.log(lokasi);
 	 var berita = {
