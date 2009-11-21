@@ -22,6 +22,7 @@
 	 var judul = String(y.xpath(q.results, '//div[@class="judulisiberita"]'));
 	 //var judul = q.results.span.(@['class']=="judul");
 	 var lokasi = String(y.xpath(q.results, '//div[@id=\'article_body\']/p/strong')); //location
+	 lokasi.replace('/, KOMPAS.com -/', '');
 	 y.log(judul);
 	 y.log(lokasi);
 	 var berita = {
