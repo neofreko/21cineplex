@@ -33,7 +33,8 @@
 	 
 	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/plain").get().response;
 	 woeid = JSON.parse(g);
-	 y.log(g);
+	 woid = woeid.Placemark.Point;
+	 //y.log(g);
 	 
 	 //g = y.rest("http://maps.google.com/maps/geo").accept("application/xml").query("output","xml").query('q', lokasi).get().response;
 	 //y.log(g);
