@@ -17,6 +17,8 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
+		 y.include('http://json.org/json2.js');
+		 
 		 function resolveReferences(flatdb) {
       for (var element in flatdb)
             for (var attribute in flatdb[element]) {
@@ -63,7 +65,7 @@ function createHierarchy(flatdb) {
 var simpleJSON = null;
 try
 {
-    eval('jsonObject = ' + jsonResponse);        
+    jsonObject = JSON.parse(JSONResponse);        
         resolveReferences(jsonObject);
     simpleJSON = createHierarchy(jsonObject);
     // start using simpleJSON
