@@ -28,7 +28,7 @@
 	 y.log(lokasi);
 	 
 	 // woeid
-	 wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "@lokasi, jakarta" AND documentType="text/plain" AND appid="@appid"', {lokasi: lokasi, appid: 'ouWbNM36', url: url});
+	 wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "jakarta" AND documentType="text/plain" AND appid="@appid"', {lokasi: lokasi, appid: 'ouWbNM36', url: url});
 	 woeid = wq.results;
 	 y.log(woeid);
 	 var berita = {
