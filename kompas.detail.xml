@@ -31,7 +31,7 @@
 	 // woeid
 	 //wq = y.query('SELECT * FROM geo.placemaker WHERE documentContent = "jakarta" AND documentType="text/plain" AND appid="@appid"', {lokasi: lokasi, appid: 'ouWbNM36', url: url});
 	 
-	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/json").get().response;
+	 g = y.rest("http://maps.google.com/maps/geo").query("output","json").query('q', lokasi).accept("text/plain").get().response;
 	 woeid = JSON.parse(g);
 	 y.log(g);
 	 
