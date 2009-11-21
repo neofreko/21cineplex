@@ -15,7 +15,12 @@
       <execute><![CDATA[          
          // Your javascript goes here. 
          // We will run it on our servers
-	 y.include('http://json.org/json2.js');
+	 
+	 /*
+	 use 'http://github.com/neofreko/21cineplex/raw/master/detik.detail.xml' as detik; select * from detik where url="http://www.detikhot.com/read/2009/11/21/180626/1246144/546/midnite-sale-di-grand-indonesia"
+	 */
+	 
+	 y.include('http://json.org/json2.js');	 
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'isiberita\']"');
 	 //y.log(q.results);
@@ -24,6 +29,7 @@
 	 //var judul = q.results.span.(@['class']=="judul");
 	 var lokasi = String(y.xpath(q.results, '//strong')[2]); //location
 	 //lokasi = new RegExp(/<div class="tower">.*?<\/div><strong>(.*?)<\/strong>/m).exec(q.results);
+	 
 	 y.log(judul);
 	 y.log(lokasi);
 	 
@@ -32,10 +38,14 @@
 	 woeid = JSON.parse(g);
 	 woeid = woeid.Placemark[0].Point;
 	 
+	 // calais
+	 var calais = y.query('use 'http://github.com/neofreko/21cineplex/raw/master/opencalais.xml' as opencalais; select * from opencalais where licenseID = "xerhnpv8p8ru95h9wucgk4n6" and content = "bandara soekarno hatta, bali, indonesia, linux gitu loh"');
+	 
 	 var berita = {
 	    'judul': judul,
 	    'lokasi': lokasi,
-	    'woeid': woeid
+	    'woeid': woeid,
+		'calais': calais.results
 	 };
          response.object = berita;
       ]]></execute>    
