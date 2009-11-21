@@ -18,12 +18,14 @@
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'isiberita\']"');
 	 //y.log(y.xpath(q.results, '//span[@class="judul"]'));
-	 //var judul = y.xpath(q.results, '//span[@class="judul"]');
-	 var judul = q.results.span.(@['class']=="judul");
-	 var lokasi = q.results.strong; //location
+	 var judul = y.xpath(q.results, '//span[@class="judul"]');
+	 //var judul = q.results.span.(@['class']=="judul");
+	 var lokasi = y.xpath(q.results, '//strong[0]'); //location
 	 y.log(judul);
+	 y.log(lokasi);
 	 var berita = {
-	    'judul': judul
+	    'judul': judul,
+	    'lokasi': lokasi
 	 };
          response.object = berita;
       ]]></execute>    
