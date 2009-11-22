@@ -23,7 +23,7 @@
 	 y.include('http://json.org/json2.js');	 
 
 	 var q = y.query('select * from html where url="' + url + '" and xpath="//div[@id=\'isiberita\']"');
-	 y.log(q.results.div);
+	 y.log(q.results.div.toXMLString());
 	 //y.log(y.xpath(q.results, '//span[@class="judul"]'));
 	 var judul = String(y.xpath(q.results, '//span[@class="judul"]'));
 	 //var judul = q.results.span.(@['class']=="judul");
@@ -42,7 +42,7 @@
 	  woeid = {};
 	 
 	 // calais
-	 var calais = y.query('use "http://github.com/neofreko/21cineplex/raw/master/opencalais.xml" as opencalais; select * from opencalais where licenseID = "xerhnpv8p8ru95h9wucgk4n6" and content = "@content"', {'content': String(q.results.div).replace(/[\n|\r]/m, '')});
+	 var calais = y.query('use "http://github.com/neofreko/21cineplex/raw/master/opencalais.xml" as opencalais; select * from opencalais where licenseID = "xerhnpv8p8ru95h9wucgk4n6" and content = "@content"', {'content': q.results.div.toXMLString())});
 	 
 	 y.log(calais);
 	 
