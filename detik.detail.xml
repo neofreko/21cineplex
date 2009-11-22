@@ -42,7 +42,7 @@
 	  woeid = {};
 	 
 	 // calais
-	 var calais = y.query('use "http://github.com/neofreko/21cineplex/raw/master/opencalais.xml" as opencalais; select * from opencalais where licenseID = "xerhnpv8p8ru95h9wucgk4n6" and content = "@content"', {'content': q.results.div.toXMLString()});
+	 var calais = y.query('use "http://github.com/neofreko/21cineplex/raw/master/opencalais.xml" as opencalais; select * from opencalais where licenseID = "xerhnpv8p8ru95h9wucgk4n6" and content = "'+q.results.div.toXMLString()+'"');
 	 
 	 y.log(calais);
 	 
