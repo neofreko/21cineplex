@@ -52,7 +52,7 @@ function createHierarchy(flatdb) {
 		  paramsXML=<c:params xmlns:c="http://s.opencalais.com/1/pred/" 
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <c:processingDirectives 
-        c:contentType="text/html" 
+        c:contentType="text/xml" 
         c:outputFormat="application/json">
     </c:processingDirectives>
     <c:userDirectives />
