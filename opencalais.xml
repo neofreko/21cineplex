@@ -60,7 +60,10 @@ function createHierarchy(flatdb) {
     <c:externalMetadata />
         </c:params>;
 		 //q = y.rest('http://api.opencalais.com/enlighten/rest/').accept('text/plain').query('licenseID', licenseID).query('content', content).query('paramsXML', paramsXML).get().response;
-		 q = y.rest('http://api.opencalais.com/enlighten/rest/').accept('text/plain').contentType('text/plain').post('licenseID='+ licenseID+'&content='+ content+'&paramsXML='+ paramsXML).response;
+		 data=<licenseID>{licenseID}</licenseID>
+		 <content>{content}</content>
+		 {paramsXML};
+		 q = y.rest('http://api.opencalais.com/enlighten/rest/').accept('text/plain').contentType('application/xml').post(data).response;
 		 y.log(q);
 		 
 		 var jsonObject = null;
